@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<body>
+
+<form method="post" action="../save">
+    {% csrf_token %}
+    <input type="text" name="task" value="{{ name.mytask }}">
+    <input type="hidden" name="id" value="{{ name.id }}">
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+
+
+</html>

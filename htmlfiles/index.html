@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+ 
+
+    <div class="col-lg-4 col-md-4 mt-5 col-sm-4 container justify-content-center">
+        <div class="col" style="background:#DAF7A6 ">
+          TEXT
+  
+   
+        <form method="post" action="solve">
+
+            {% csrf_token %}
+            <input type="textfield" name="task" class=" " id="task" placeholder="enter your tasks">
+            <input type="submit" value="Submit" class="btn btn-elegant btn-rounded btn-sm my-0">
+        </form>
+   
+ 
+
+    {% for a in ans %}
+         <table>
+        <tr>
+            <td>{{ a.id }} {{ a.mytask }}</td> 
+            <td><a href="{% url 'update' a.id %}"><button type="button" class="btn btn-success ml-2 mb-2 mt-2">Update</button></a></td>
+                <td><a href="{% url 'delete' a.id %}"><button type="button" class="btn btn-danger ml-2">Delete</button></a></td> 
+        </tr>
+        </table>
+        
+      
+          <div>
+          </div> 
+        
+              
+               
+          
+            
+
+         
+  
+
+    {% endfor %}
+</body>
+
+
+
+</html>
